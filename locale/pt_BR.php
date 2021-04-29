@@ -2080,4 +2080,3 @@ $t["Sorry"] = "Desculpe";
 $t['Video Not Found'] = 'Vídeo não encontrado';
 //----- translation strings from view/videosList.php
 $t["Plugin"] = "Plugin";
-$t["nada"]="nada";
