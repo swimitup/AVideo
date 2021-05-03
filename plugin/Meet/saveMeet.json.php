@@ -20,8 +20,14 @@ if (empty($objM)) {
     die(json_encode($obj));
 }
 
+//User::loginFromRequest();
+
 if (!User::canCreateMeet()) {
     $obj->msg = "You Cannot create meet";
+    _error_log('Meet:User::canCreateMeet error Required: ' . json_encode($_REQUEST));
+    _error_log('Meet:User::canCreateMeet error POST: ' . json_encode($_POST));
+    _error_log("Meet:User::canCreateMeet error GET: " . json_encode($_GET));
+    _error_log("Meet:User::canCreateMeet error php://input" . file_get_contents("php://input"));
     die(json_encode($obj));
 }
 
@@ -78,9 +84,9 @@ $obj->meet_schedule_id = $meet_schedule_id;
 $obj->password = @$_REQUEST['RoomPasswordNew'];
 $obj->error = empty($meet_schedule_id);
 
-if($obj->error){
+if ($obj->error) {
     // check if the user install the tables
-    if(!Meet_schedule::isTableInstalled()){
+    if (!Meet_schedule::isTableInstalled()) {
         $obj->msg = "You need to install the tables for this plugin";
     }
 }
