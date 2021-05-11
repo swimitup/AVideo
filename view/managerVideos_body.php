@@ -1080,7 +1080,7 @@ echo AVideoPlugin::getManagerVideosEdit();
                                                 showUploadedThumbs: false,
                                                 maxFileCount: 1,
                                                 initialPreview: [
-                                                    "<img style='height:160px' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + ".jpg'>",
+                                                    "<img style='height:160px' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + "/" + row.filename + ".jpg'>",
                                                 ],
                                                 initialCaption: row.clean_title + '.jpg',
                                                 initialPreviewShowDelete: false,
@@ -1098,7 +1098,7 @@ echo AVideoPlugin::getManagerVideosEdit();
                                                 showUploadedThumbs: false,
                                                 maxFileCount: 1,
                                                 initialPreview: [
-                                                    "<img style='height:160px' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + "_portrait.jpg'>",
+                                                    "<img style='height:160px' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + "/" + row.filename + "_portrait.jpg'>",
                                                 ],
                                                 initialCaption: row.clean_title + '_portrait.jpg',
                                                 initialPreviewShowDelete: false,
@@ -1116,7 +1116,7 @@ echo AVideoPlugin::getManagerVideosEdit();
                                                 showUploadedThumbs: false,
                                                 maxFileCount: 1,
                                                 initialPreview: [
-                                                    "<img style='height:160px' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + ".gif'>",
+                                                    "<img style='height:160px' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + "/" + row.filename + ".gif'>",
                                                 ],
                                                 initialCaption: row.clean_title + '.gif',
                                                 initialPreviewShowDelete: false,
@@ -1134,7 +1134,7 @@ echo AVideoPlugin::getManagerVideosEdit();
                                                 showUploadedThumbs: false,
                                                 maxFileCount: 1,
                                                 initialPreview: [
-                                                    "<img style='height:160px' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + "_portrait.gif'>",
+                                                    "<img style='height:160px' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + "/" + row.filename + "_portrait.gif'>",
                                                 ],
                                                 initialCaption: row.clean_title + '_portrait.gif',
                                                 initialPreviewShowDelete: false,
@@ -1152,7 +1152,7 @@ echo AVideoPlugin::getManagerVideosEdit();
                                                 showUploadedThumbs: false,
                                                 maxFileCount: 1,
                                                 initialPreview: [
-                                                    "<img style='height:160px' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + ".webp'>",
+                                                    "<img style='height:160px' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + "/" + row.filename + ".webp'>",
                                                 ],
                                                 initialCaption: row.clean_title + '.webp',
                                                 initialPreviewShowDelete: false,
@@ -1924,14 +1924,14 @@ if (Permissions::canAdminVideos()) {
                                                         var type, img, is_portrait;
                                                         if (row.type === "audio") {
                                                             type = "<i class='fa fa-headphones hidden-xs' style='font-size:14px;'></i> ";
-                                                            img = "<img class='img img-responsive img-thumbnail pull-left rotate" + row.rotation + "' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + ".jpg?" + Math.random() + "' style='max-height:80px; margin-right: 5px;'> ";
+                                                            img = "<img class='img img-responsive img-thumbnail pull-left rotate" + row.rotation + "' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + "/" + row.filename + ".jpg?" + Math.random() + "' style='max-height:80px; margin-right: 5px;'> ";
                                                             if (row.videosURL && typeof row.videosURL !== 'undefined' && typeof row.videosURL.pjpg !== 'undefined' && row.videosURL.pjpg.url) {
                                                                 img = "<img class='img img-responsive img-thumbnail pull-left' src='" + row.videosURL.pjpg.url + "?" + Math.random() + "'  style='max-height:80px; margin-right: 5px;'> ";
                                                             } else if (row.videosURL && typeof row.videosURL !== 'undefined' && typeof row.videosURL.jpg !== 'undefined' && row.videosURL.jpg.url) {
                                                                 img = "<img class='img img-responsive img-thumbnail pull-left' src='" + row.videosURL.jpg.url + "?" + Math.random() + "'  style='max-height:80px; margin-right: 5px;'> ";
                                                             } else {
                                                                 is_portrait = (row.rotation === "90" || row.rotation === "270") ? "img-portrait" : "";
-                                                                img = "<img class='img img-responsive " + is_portrait + " img-thumbnail pull-left rotate" + row.rotation + "' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + ".jpg?" + Math.random() + "'  style='max-height:80px; margin-right: 5px;'> ";
+                                                                img = "<img class='img img-responsive " + is_portrait + " img-thumbnail pull-left rotate" + row.rotation + "' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + "/" + row.filename + ".jpg?" + Math.random() + "'  style='max-height:80px; margin-right: 5px;'> ";
                                                             }
                                                         } else {
                                                             type = "<i class='fa fa-film hidden-xs' style='font-size:14px;'></i> ";
